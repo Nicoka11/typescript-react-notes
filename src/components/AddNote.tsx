@@ -5,15 +5,31 @@ interface Props {
   btn: String;
 }
 
-const AddNoteBtn = styled.div`
-  background-color: #61DBFB;
-  color: #282c34;
-  border-radius: 3px;
-  padding: 5px 15px;
+const InputCreateNote = styled.input.attrs({
+  type: "text",
+  placeholder: "Create a note...",
+})`
+  padding: 10px 15px;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  font-size: 15px;
+  border: 2px solid white;
+  border-radius: 5px;
+  outline: none;
+
+  &::placeholder {
+    opacity: 70%;
+    color: white;
+  }
 `;
 
 const AddNote: FC<Props> = (props) => {
-  return <AddNoteBtn>{props.btn}</AddNoteBtn>;
+  return (
+    <div>
+      <InputCreateNote />
+    </div>
+  );
 };
 
 export default AddNote;
