@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <AddNote primary={true}/>
+        <AddNote btn="Add a note"/>
       </header>
     </div>
   );
