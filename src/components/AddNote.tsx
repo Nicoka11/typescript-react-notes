@@ -1,27 +1,38 @@
+// @ts-nocheck
+
 import { FC } from "react";
 import styled from "styled-components";
 import { useState } from "react";
 
-const InputCreateNote = styled.input.attrs({
-  type: "text",
-  placeholder: "Create a note...",
-})`
-  padding: 10px 15px;
-  width: 10rem;
-  background-color: transparent;
-  color: white;
-  font-size: 15px;
-  border: 2px solid white;
-  border-radius: 5px;
-  outline: none;
+// const InputCreateNote = styled.input.attrs({
+//   type: "text",
+//   placeholder: "Create a note...",
+// })`
+//   padding: 10px 15px;
+//   width: 10rem;
+//   background-color: transparent;
+//   color: white;
+//   font-size: 15px;
+//   border: 2px solid white;
+//   border-radius: 5px;
+//   outline: none;
 
-  &::placeholder {
-    opacity: 70%;
-    color: white;
-  }
+//   &::placeholder {
+//     opacity: 70%;
+//     color: white;
+//   }
+// `;
+
+const NewNote = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
+  background: red;
+  border-radius: 3px;
+  overflow: hidden;
 `;
 
-const InputCreateNote2 = styled.input.attrs({
+const InputCreateTitle = styled.input.attrs({
   type: "text",
   placeholder: "Create a note...",
 })`
@@ -29,10 +40,10 @@ const InputCreateNote2 = styled.input.attrs({
   background-color: white;
   font-size: 15px;
   border: none;
-  border-radius: 3px;
   box-shadow: 0 8px 11px rgba(0, 0, 0, 0.1);
   outline: none;
-  width: 100%;
+
+  font-weight: ${(props: any) => (props.focused ? "bold" : "normal")};
 
   &::placeholder {
     opacity: 70%;
@@ -40,9 +51,21 @@ const InputCreateNote2 = styled.input.attrs({
   }
 `;
 
-const NewNote = styled.div`
-  width: 50rem;
-  background: red;
+const InputCreateNote = styled.input.attrs({
+  type: "text",
+  placeholder: "Write your note...",
+})`
+  padding: 10px 15px;
+  background-color: white;
+  font-size: 15px;
+  border: none;
+  box-shadow: 0 8px 11px rgba(0, 0, 0, 0.1);
+  outline: none;
+
+  &::placeholder {
+    opacity: 70%;
+    color: black;
+  }
 `;
 
 interface Props {
@@ -57,18 +80,20 @@ const AddNote: FC<Props> = (props) => {
 
   const createNoteFocusHandler = () => {
     setState((prevState) => ({ ...prevState, focused: !state.focused }));
-    console.log("Here is the new state 🔵", state);
+    console.log(InputCreateTitle.componentStyle);
   };
 
   return (
     <div>
       <NewNote>
-        <InputCreateNote2
+        <InputCreateTitle
           onChange={(e) => {
             setState((prevState) => ({ ...prevState, search: e.target.value }));
           }}
           onFocus={createNoteFocusHandler}
+          focused={state.focused}
         />
+        {state.focused && <InputCreateNote />}
       </NewNote>
       <p>{state.search}</p>
     </div>
