@@ -20,19 +20,19 @@ const InputCreateNote = styled.input.attrs({
     color: white;
   }
 `;
+
 const InputCreateNote2 = styled.input.attrs({
   type: "text",
   placeholder: "Create a note...",
 })`
   padding: 10px 15px;
-  width: 100%;
   background-color: white;
-  color: white;
   font-size: 15px;
   border: none;
   border-radius: 3px;
   box-shadow: 0 8px 11px rgba(0, 0, 0, 0.1);
   outline: none;
+  width: 100%;
 
   &::placeholder {
     opacity: 70%;
@@ -40,20 +40,37 @@ const InputCreateNote2 = styled.input.attrs({
   }
 `;
 
+const NewNote = styled.div`
+  width: 50rem;
+  background: red;
+`;
+
 interface Props {
   btn: String;
 }
 
 const AddNote: FC<Props> = (props) => {
-  const [search, setSearch] = useState("");
+  const [state, setState] = useState({
+    search: "",
+    focused: false,
+  });
+
+  const createNoteFocusHandler = () => {
+    setState((prevState) => ({ ...prevState, focused: !state.focused }));
+    console.log("Here is the new state 🔵", state);
+  };
+
   return (
     <div>
-      <InputCreateNote2
-        onChange={(e) => {
-          setSearch(e.target.value);
-        }}
-      />
-      <p>{search}</p>
+      <NewNote>
+        <InputCreateNote2
+          onChange={(e) => {
+            setState((prevState) => ({ ...prevState, search: e.target.value }));
+          }}
+          onFocus={createNoteFocusHandler}
+        />
+      </NewNote>
+      <p>{state.search}</p>
     </div>
   );
 };
