@@ -1,14 +1,27 @@
-import AddNote from './components/AddNote'
-import './App.css';
+import AddNote from "./components/AddNote";
+import styled from "styled-components";
+import colorPalette from "./assets/colorPalette.js";
 
-function App() {
+const AppWrapper = styled.div`
+  padding-top: 3rem;
+  display: flex;
+  justify-content: center;
+  background: ${colorPalette.RaisinBlack};
+`;
+
+const App = styled.div`
+  height: 100vh;
+  width: 50rem;
+`;
+
+function ReactApp() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <AddNote btn="Add a note"/>
-      </header>
-    </div>
+    <AppWrapper>
+      <App>
+        <AddNote btn="Add a note" />
+      </App>
+    </AppWrapper>
   );
 }
 
-export default App;
+export default ReactApp;

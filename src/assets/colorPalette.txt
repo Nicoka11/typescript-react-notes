@@ -1,0 +1,13 @@
+/* Coolors Exported Palette - https://coolors.co/202030-39304a-cea07e-edd9a3-e2e8c0 */
+
+/* CSV */
+202030,39304a,cea07e,edd9a3,e2e8c0
+
+/* Array */
+["202030","39304a","cea07e","edd9a3","e2e8c0"]
+
+/* Object */
+{"Raisin Black":"202030","English Violet":"39304a","Antique Brass":"cea07e","Banana Mania":"edd9a3","Pale Spring Bud":"e2e8c0"}
+
+/* Extended Array */
+[{"name":"Raisin Black","hex":"202030","rgb":[32,32,48],"cmyk":[33,33,0,81],"hsb":[240,33,19],"hsl":[240,20,16],"lab":[13,5,-11]},{"name":"English Violet","hex":"39304a","rgb":[57,48,74],"cmyk":[23,35,0,71],"hsb":[261,35,29],"hsl":[261,21,24],"lab":[22,10,-15]},{"name":"Antique Brass","hex":"cea07e","rgb":[206,160,126],"cmyk":[0,22,39,19],"hsb":[25,39,81],"hsl":[25,45,65],"lab":[69,13,24]},{"name":"Banana Mania","hex":"edd9a3","rgb":[237,217,163],"cmyk":[0,8,31,7],"hsb":[44,31,93],"hsl":[44,67,78],"lab":[87,-1,29]},{"name":"Pale Spring Bud","hex":"e2e8c0","rgb":[226,232,192],"cmyk":[3,0,17,9],"hsb":[69,17,91],"hsl":[69,47,83],"lab":[91,-9,19]}]
