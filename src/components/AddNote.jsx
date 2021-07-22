@@ -24,7 +24,6 @@ const NewNote = styled.div`
   display: flex;
   flex-direction: column;
   width: 50rem;
-  background: red;
   border-radius: 3px;
   overflow: hidden;
 `;
