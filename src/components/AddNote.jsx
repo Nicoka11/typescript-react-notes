@@ -1,6 +1,3 @@
-// @ts-nocheck
-
-import { FC } from "react";
 import styled from "styled-components";
 import { useState } from "react";
 
@@ -43,7 +40,7 @@ const InputCreateTitle = styled.input.attrs({
   box-shadow: 0 8px 11px rgba(0, 0, 0, 0.1);
   outline: none;
 
-  font-weight: ${(props: any) => (props.focused ? "bold" : "normal")};
+  font-weight: ${(props) => (props.focused ? "bold" : "normal")};
 
   &::placeholder {
     opacity: 70%;
@@ -68,11 +65,7 @@ const InputCreateNote = styled.input.attrs({
   }
 `;
 
-interface Props {
-  btn: String;
-}
-
-const AddNote: FC<Props> = (props) => {
+const AddNote = (props) => {
   const [state, setState] = useState({
     search: "",
     focused: false,
