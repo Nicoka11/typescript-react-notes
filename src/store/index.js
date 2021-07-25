@@ -1,7 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, createStore } from "@reduxjs/toolkit";
 
-import rootReducer from "./reducers/reducer";
+import noteReducer from "./reducers/noteReducer";
 
-export default configureStore({
-  reducer: { rootReducer },
-});
+export default createStore(
+  combineReducers({
+    noteReducer,
+  })
+);

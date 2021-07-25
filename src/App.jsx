@@ -12,8 +12,17 @@ const AppWrapper = styled.div`
 `;
 
 const App = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   height: 100vh;
-  width: 50rem;
+  width: 90rem;
+`;
+
+const AllNotesWrapper = styled.section`
+  width: 100%;
+  background-color: blue;
+  margin-top: 3rem;
 `;
 
 function ReactApp() {
@@ -21,9 +30,10 @@ function ReactApp() {
     <AppWrapper>
       <App>
         <AddNote btn="Add a note" />
-        <Note
-          title="This is the title"
-          content="
+        <AllNotesWrapper>
+          <Note
+            title="This is the title"
+            content="
         Studio Photo
         Bureau
         House
@@ -39,8 +49,9 @@ function ReactApp() {
         Factory
         Ville/Maison/Temple du Japon
         Medieval"
-          color={colorPalette.BananaMania}
-        />
+            color={colorPalette.BananaMania}
+          />
+        </AllNotesWrapper>
       </App>
     </AppWrapper>
   );

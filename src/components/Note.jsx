@@ -7,6 +7,13 @@ const NoteCard = styled.div.attrs((props) => ({
   width: 15rem;
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  align-self: start;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.34);
+  }
 `;
 
 const Note = (props) => {
@@ -17,5 +24,4 @@ const Note = (props) => {
     </NoteCard>
   );
 };
-
 export default Note;

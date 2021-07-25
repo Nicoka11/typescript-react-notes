@@ -28,10 +28,12 @@ const NewNote = styled.div`
   overflow: hidden;
 `;
 
-const InputCreateTitle = styled.input.attrs({
-  type: "text",
-  placeholder: "Create a note...",
-})`
+const InputCreateTitle = styled.input.attrs(
+  {
+    type: "text",
+    placeholder: "Create a note...",
+  }
+)`
   padding: 10px 15px;
   background-color: white;
   font-size: 15px;
@@ -87,7 +89,6 @@ const AddNote = (props) => {
         />
         {state.focused && <InputCreateNote />}
       </NewNote>
-      <p>{state.search}</p>
     </div>
   );
 };
