@@ -42,7 +42,13 @@ export default function noteReducer(state = initialNotesState, action) {
             default: "white",
           },
         },
-    ];
+      ];
+    case "note/noteDeleted":
+      return [
+        state.filter(stateId => { })
+      ];
+    case "note/noteModify":
+      return [];
     default:
       return state;
   }
